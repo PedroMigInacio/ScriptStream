@@ -2,9 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScriptStream.MainPage">
+    
+    
 
-    <ScrollView VerticalScrollBarVisibility="Always" >
-        <Grid x:Name = "gridSystem" IsClippedToBounds="True">
+    <ScrollView >
+       <!-- <WebView x:Name="shotlessnospupups"  Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/> -->
+
+        <Grid x:Name = "gridSystem">
         </Grid>
 	</ScrollView>
 
