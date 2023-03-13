@@ -7,31 +7,27 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 50; i++)
         {
-            var rowDefinition = new RowDefinition
+            for (int j = 0; j < 3; j++)
             {
-                Height = new GridLength(1, GridUnitType.Star)
-            };
-            gridSystem.RowDefinitions.Add(rowDefinition);
+                Random rnd = new Random();
+                Color randomColor = Color.FromRgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                var newColoredBox = new BoxView
+                {
+                    Color = randomColor
+                };
 
-            var columnDefinition = new ColumnDefinition
-            {
-                Width = new GridLength(1, GridUnitType.Star)
-            };
-            gridSystem.ColumnDefinitions.Add(columnDefinition);
-
-            for (int j = 0; j < 99; j++)
-            {
-                var newElement = new Label
+                var newLabel = new Label
                 {
                     Text = $"({i}, {j})",
                     Margin = new Thickness(5),
                     VerticalOptions = LayoutOptions.Center,
-                    HorizontalOptions = LayoutOptions.Center
+                    HorizontalOptions = LayoutOptions.Center,
+ 
                 };
-
-                gridSystem.Add(newElement, i, j);
+                gridSystem.Add(newColoredBox, j, i);
+                gridSystem.Add(newLabel, j, i);
             }
         }
 

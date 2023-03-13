@@ -3,9 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScriptStream.MainPage">
 
-	<ScrollView>
-		<Grid>
-		</Grid>
+    <ScrollView VerticalScrollBarVisibility="Always" >
+        <Grid x:Name = "gridSystem">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
 	</ScrollView>
 
 </ContentPage>
