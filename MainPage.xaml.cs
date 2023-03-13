@@ -2,23 +2,41 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    int count = 0;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+        for (int i = 0; i < 3; i++)
+        {
+            var rowDefinition = new RowDefinition
+            {
+                Height = new GridLength(1, GridUnitType.Star)
+            };
+            gridSystem.RowDefinitions.Add(rowDefinition);
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+            var columnDefinition = new ColumnDefinition
+            {
+                Width = new GridLength(1, GridUnitType.Star)
+            };
+            gridSystem.ColumnDefinitions.Add(columnDefinition);
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+            for (int j = 0; j < 99; j++)
+            {
+                var newElement = new Label
+                {
+                    Text = $"({i}, {j})",
+                    Margin = new Thickness(5),
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center
+                };
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+                gridSystem.Add(newElement, i, j);
+            }
+        }
+
+
+    }
+
 }
 
