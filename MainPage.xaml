@@ -4,15 +4,7 @@
              x:Class="ScriptStream.MainPage">
 
     <ScrollView VerticalScrollBarVisibility="Always" >
-        <Grid x:Name = "gridSystem">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Grid x:Name = "gridSystem" IsClippedToBounds="True">
         </Grid>
 	</ScrollView>
 
